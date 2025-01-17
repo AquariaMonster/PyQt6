@@ -1,13 +1,19 @@
 from PyQt6 import QtWidgets, uic
 import sys
 import sqlite3
+import os  # <-- Add this import
+from dotenv import load_dotenv  # <-- Add this import
 from huggingface_hub import InferenceClient
+
+# Load environment variables from .env file
+load_dotenv()  # <-- Add this line
 
 # Initialize the Hugging Face client for movie suggestions
 client = InferenceClient(
     "microsoft/Phi-3-mini-4k-instruct",
-    token="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",
+    token=os.getenv("HUGGING_FACE_TOKEN"),  # <-- Load token from environment
 )
+
 
 class MainApp(QtWidgets.QMainWindow):
     def __init__(self):
