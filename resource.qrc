@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="pic">
+    <file>WatchlistDialog.jpg</file>
+    <file>doorSuggest.jpg</file>
+    <file>mainbacksmall.jpg</file>
+  </qresource>
+</RCC>
